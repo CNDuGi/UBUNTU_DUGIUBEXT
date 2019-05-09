@@ -1,0 +1,105 @@
+#!/bin/bash
+#以下为文字带有颜色的函数
+#颜色列表:
+#-----------------------------------------------------------------------
+#40 暗灰色
+#41 红色
+#42 绿色
+#43 黄色
+#44 蓝色
+#45 紫色
+#46 天蓝色
+#47 白色
+#-----------------------------------------------------------------------
+#通常在操作成功时调用显示绿色背景
+function pok()
+{
+    echo -e "\033[47;42m$*\033[0m"
+}
+function pdone()
+{
+    echo -e "\033[47;42m$*\033[0m"
+}
+
+#通常在操作失败时调用显示红色背景
+function perr()
+{
+    echo -e "\033[47;41m$*\033[0m"
+}
+function perro()
+{
+    echo -e "\033[47;41m$*\033[0m"
+}
+
+#通常在操作不规范时调用显示黄色背景
+function pwarn()
+{
+    echo -e "\033[47;43m$*\033[0m"
+}
+
+#通常在需要提示重要信息时显示蓝色文字
+function pinfo()
+{
+    echo -e "\033[47;44m$*\033[0m"
+}
+
+#以下为文字带有颜色的函数
+#颜色列表:
+#-----------------------------------------------------------------------
+#30 暗灰色
+#31 红色
+#32 绿色
+#33 黄色
+#34 蓝色
+#35 紫色
+#36 天蓝色
+#37 白色
+#-----------------------------------------------------------------------
+
+#通常在操作成功时调用显示绿色文字
+function sok()
+{
+    echo -e "\033[32;1m$*\033[0m"
+}
+function sdone()
+{
+    echo -e "\033[32;1m$*\033[0m"
+}
+
+#通常在操作失败时调用显示红色文字
+function serr()
+{
+    echo -e "\033[31;1m$*\033[0m"
+}
+function serro()
+{
+    echo -e "\033[31;1m$*\033[0m"
+}
+
+#通常在操作不规范时调用显示黄色文字
+function swarn()
+{
+    echo -e "\033[33;1m$*\033[0m"
+}
+
+#通常在需要提示重要信息时显示蓝色文字
+function sinfo()
+{
+    echo -e "\033[34;1m$*\033[0m"
+}
+
+if [ ! -f ~/.colorc ]; then
+	pok   "pok   installed [OK]"
+	pdone "pdone installed [OK]"
+	perr  "perr  installed [OK]"
+	perro "perro installed [OK]"
+	pwarn "pwarn installed [OK]"
+	pinfo "pinfo installed [OK]"
+
+	sok   "sok   installed [OK]"
+	sdone "sdone installed [OK]"
+	serr  "serr  installed [OK]"
+	serro "serro installed [OK]"
+	swarn "swarn installed [OK]"
+	sinfo "sinfo installed [OK]"
+fi
